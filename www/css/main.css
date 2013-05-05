@@ -28,6 +28,18 @@ overflow-y:scroll;
 width:320px;
 height:410px;
 }
+.title-left{
+width:50px;
+margin-left:20px;
+margin-top:20px;
+font-size:28px;
+}
+.title-right{
+width:200px;
+float:right;
+margin-top:-37px;
+margin-right:20px;
+}
 .card{
 width:260px;
 margin-left:20px;
@@ -40,7 +52,6 @@ border-radius:5px;
 color:#666;
 padding:10px;
 font-size:14px;
-
 
 }
 .card1{
