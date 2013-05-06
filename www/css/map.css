@@ -1,0 +1,14 @@
+.textinput{
+	height: 20px;
+	z-index:1;
+}
+
+#googleMap{
+	height:410px;
+	width:320px;
+	position:absolute;
+	margin:0;
+	top:0px;
+	padding:0;
+	z-index:99;
+}
