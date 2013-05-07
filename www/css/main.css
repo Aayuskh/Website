@@ -78,3 +78,31 @@ list-style:none;
 font-weight:normal;
 font-size:16px;
 }
+
+#googleMap{
+height:100%;
+width:100%;
+margin-top:5px;
+top:0px;
+padding:0;
+z-index: 0;
+}
+
+.trip{
+width: 320px;
+height:20px;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 99;
+}
+
+.trip-left{
+margin-top: 10px;
+margin-left: 5px;
+width:180px;
+float: left;
+}
+.trip-right{
+margin-top: 8px;
+}
