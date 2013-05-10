@@ -21,7 +21,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,  target-densitydpi=device-dpi" />
         
         <title>Hello World</title>
         <link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -35,12 +35,19 @@
         <script type="text/javascript" src="js/framework.js"></script>
         <script type="text/javascript">
             app.initialize();
+            $(document).ready(function() {
+              $.mobile.allowCrossDomainPages=true;
+                           
+            });
+             
+            
         </script>
-        <div class="main">
+        <div data-role="page" style="padding:0;margin:0;">
+        <div class="main" >
             <div class="card card1">
                 
                 <h1>DESTINATION: </h1>
-                    <ul>
+                <ul>
                     <b>Carnegie Mellon University</b>
                     <li>
                         
@@ -52,8 +59,8 @@
                         <b>61B</b> (in 13 minutes)<br/>
                         Arrive at Forbes and Murray in 10:27AM
                     </li>
-                    </ul>
-                    
+                </ul>
+                
             </div>
             
             <div class="card  card2" style="">
@@ -72,8 +79,8 @@
                         Arrive at Forbes and Murray in 10:36AM
                     </li>
                     <ul>
-                
-            </div>
+                        
+                        </div>
             
             
             <div class="card card3">
@@ -89,12 +96,8 @@
                 
                 
                 
-            
+                
             </div>
-            
-            
-            
-            
             
         </div>
         <div class="footBar">
@@ -114,6 +117,7 @@
                     </li>
                 </ul>
             </div>
+        </div>
         </div>
     </body>
 </html>

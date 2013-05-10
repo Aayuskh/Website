@@ -8,12 +8,12 @@ margin:0;
 }
 .footBar{
 height:50px;
-background-color:#ccc;
+
 width:320px;
 position:absolute;
 z-index:99;
 margin:0;
-top:410px;
+bottom:0px;
 padding:0;
 }
 .footBar a{
