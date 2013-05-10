@@ -28,6 +28,18 @@ overflow-y:scroll;
 width:320px;
 height:410px;
 }
+.title-left{
+width:50px;
+margin-left:20px;
+margin-top:20px;
+font-size:28px;
+}
+.title-right{
+width:200px;
+float:right;
+margin-top:-37px;
+margin-right:20px;
+}
 .card{
 width:260px;
 margin-left:20px;
@@ -40,7 +52,6 @@ border-radius:5px;
 color:#666;
 padding:10px;
 font-size:14px;
-
 
 }
 .card1{
@@ -66,4 +77,32 @@ list-style:none;
 .card h1{
 font-weight:normal;
 font-size:16px;
+}
+
+#googleMap{
+height:100%;
+width:100%;
+margin-top:5px;
+top:0px;
+padding:0;
+z-index: 0;
+}
+
+.trip{
+width: 320px;
+height:20px;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 99;
+}
+
+.trip-left{
+margin-top: 10px;
+margin-left: 5px;
+width:180px;
+float: left;
+}
+.trip-right{
+margin-top: 8px;
 }
