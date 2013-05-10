@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,  target-densitydpi=device-dpi" />
+        
+        <title>Hello World</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.css" />
+    </head>
+    <body>
+        
+        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.js"></script>
+        <script type="text/javascript" src="js/framework.js"></script>
+        <script type="text/javascript">
+            
+            $(document).ready(function() {
+                              $.mobile.allowCrossDomainPages=true;
+                             
+                              });
+            
+            
+            </script>
+        <div data-role="page" style="padding:0;margin:0;">
+            <div class="main" >
+                <link rel="stylesheet" type="text/css" href="css/ticket.css" />
+                <div class="card">
+                    <div class="cardTitleLeft"><h1>Ticket</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Purchase</a></div>
+                    <div style="clear:both;">
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Ticket Price: $2.50</legend>
+                            
+                            <select name="select-native-14" id="select-native-14">
+                                <option value="#" selected>1 Zone</option>
+                                <option value="#">2 Zones</option>
+                                <option value="#">Incline</option>
+                            </select>
+                            
+                            <select name="select-native-15" id="select-native-15">
+                                <option value="#">Full fare</option>
+                                <option value="#">Half fare</option>
+                            </select>
+                            
+                            <select name="select-native-16" id="select-native-16">
+                                <option value="#">N/A</option>
+                                <option value="#">Transfer</option>
+                                <option value="#">Light Rail Surcharge</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="cardTitleLeft"><h1>Pass</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Purchase</a></div>
+                    <div style="clear:both;">
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Pass Price: $25.00</legend>
+                            
+                            <select name="select-native-14" id="select-native-14">
+                                <option value="#" selected>1 Zone</option>
+                                <option value="#">2 Zones</option>
+                            </select>
+                            
+                            <select name="select-native-15" id="select-native-15">
+                                <option value="#">Weekly</option>
+                                <option value="#">Monthly</option>
+                                <option value="#">Anual</option>
+                            </select>
+                            
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardTitleLeft"><h1>Ten-Trip Ticket Book</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Purchase</a></div>
+                    <div style="clear:both;">
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Book Price: $25.00</legend>
+                            
+                            <select name="select-native-14" id="select-native-14">
+                                <option value="#" selected>1 Zone</option>
+                                <option value="#">2 Zones</option>
+                            </select>
+                            
+                            <select name="select-native-15" id="select-native-15">
+                                <option value="#">Full fare</option>
+                                <option value="#">Half fare</option>
+                            </select>
+                            
+                        </fieldset>
+                    </div>
+                    
+                </div>
+                
+                <div class="card">
+                    <div class="cardTitleLeft"><h1>Student card</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Register</a></div>
+                    <div style="clear:both;">
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            
+                            <select name="select-native-14" id="select-native-14">
+                                <option value="#" selected>Carnegie Mellon University</option>
+                                <option value="#">University of Pittsburgh</option>
+                            </select>
+                            
+                            
+                            
+                        </fieldset>
+                    </div>
+                </div>
+                <div style="margin-top:10px;">&nbsp;</div>
+                
+            </div>
+            <div class="footBar">
+                <div data-role="navbar" data-grid="c" id="tab1">
+                    <ul>
+                        <li onclick="gotoHome(this)"><a href="#" class="ui-btn-active" id="homeTab" >
+                            <div><img src="img/home.png" height="20px" /></div><div>Home</div></a>
+                        </li>
+                        <li onclick="gotoTicket(this)"><a href="#" id="ticketTab" ><div>
+                            <img src="img/ticket_w.png" height="20px" /></div><div>Ticket</div></a>
+                        </li>
+                        <li onclick="gotoMap(this)"><a href="#" id="mapTab"><div>
+                            <img src="img/map.png" height="20px" /></div><div>Map</div></a>
+                        </li>
+                        <li onclick="gotoSetting(this)"><a href="#" id="settingTab">
+                            <div><img src="img/setting.png" height="20px" /></div><div>Setting</div></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
