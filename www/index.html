@@ -31,12 +31,14 @@
     </head>
     <body>
 
-        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+  
         <script type="text/javascript" src="js/jQuery.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            $.mobile.defaultPageTransition   = 'none'
+            $.mobile.defaultDialogTransition = 'none'
+            $.mobile.buttonMarkup.hoverDelay = 0
             $(document).ready(function() {
               $.mobile.allowCrossDomainPages=true;
                            
@@ -45,8 +47,11 @@
             
         </script>
 
+<<<<<<< HEAD
         <div data-role="page" style="padding:0;margin:0;">
  
+=======
+>>>>>>> a24a50a8b1b14e7189720bfafa5ecb70c54750fa
         <div class="main">
             
             <div class="title-left" >
@@ -111,6 +116,7 @@
                 
                 
             </div>
+            <div class="bottomMargin">&nbsp;</div>
             
         </div>
         <div class="footBar">

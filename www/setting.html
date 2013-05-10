@@ -29,12 +29,14 @@
     </head>
     <body>
         
-        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+   
         <script type="text/javascript" src="js/jQuery.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
         <script type="text/javascript">
-            
+            $.mobile.defaultPageTransition   = 'none'
+            $.mobile.defaultDialogTransition = 'none'
+            $.mobile.buttonMarkup.hoverDelay = 0
             $(document).ready(function() {
                               $.mobile.allowCrossDomainPages=true;
                              
@@ -127,7 +129,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div style="margin-top:10px;">&nbsp;</div>
+                <div class="bottomMargin">&nbsp;</div>
                 
             </div>
             <div class="footBar">
