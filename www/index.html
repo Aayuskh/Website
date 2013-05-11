@@ -41,6 +41,12 @@
             $.mobile.buttonMarkup.hoverDelay = 0
             $(document).ready(function() {
               $.mobile.allowCrossDomainPages=true;
+                    if(window.localStorage.getItem("studentPass")=="true"){
+                        var url=window.localStorage.getItem("studentPass.img");
+                              $("#studentPass img").attr("src",url);
+                              $("#studentPass").css("display","block");
+                              
+                    }
                            
             });
              
@@ -96,7 +102,7 @@
                         </div>
             
             
-            <div class="card card3">
+            <div class="card card3" id="studentPass" stlye="display:none;">
                 
                 <h1>TICKET: </h1>
                 <li>
