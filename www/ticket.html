@@ -53,23 +53,29 @@
                 <p>
                     
                     <a href="#"  onclick="register()" data-role="button" data-mini="true" data-inline="true" data-icon="edit">Register</a>
-                    <a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="e" >Register</a>
+                    <a href="#" onclick="buy()" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="e" >Buy</a>
                 </p>
                 </div>
             </div>
             
             
-            <div data-role="popup" id="studentRegistry" data-position-to="window">
+
+            <div data-role="popup" id="studentValidate" data-position-to="window">
                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <div class="ui-content">
                     <p>Student Registry</p>
                     <p><input type="text"  placeholder="Student ID" value=""></p>
-                        <p><input type="password" value="" autocomplete="off" placeholder="Password"></p>
-                            <p>
-                    
-                            <a href="#" onclick="takepic()" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="e" >Buy</a>
-                            </p>
-                 </div>
+                        <p>
+                        
+                        <a href="#"  data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="e" >Get Code</a>
+                        </p>
+                        
+                     <p><input type="text"  placeholder="Validation Code" value=""></p>   
+                        <p>
+                         
+                        <a href="#" onclick="takepic()" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="e" >Take Picture</a>
+                        </p>
+                        </div>
             </div>
             <div class="main" >
                 <link rel="stylesheet" type="text/css" href="css/ticket.css" />
@@ -141,7 +147,7 @@
                 </div>
                 
                 <div class="card">
-                    <div class="cardTitleLeft"><h1>Student Pass</h1></div><div class="cardTitleRight"><a href="#studentRegistry" data-role="button" data-mini="true" data-inline="true" data-icon="check"  data-rel="popup" data-transition="slideup">Register</a></div>
+                    <div class="cardTitleLeft"><h1>Student Pass</h1></div><div class="cardTitleRight"><a href="#studentValidate" data-role="button" data-mini="true" data-inline="true" data-icon="check"  data-rel="popup" data-transition="slideup">Register</a></div>
                     <div style="clear:both;">
                         <fieldset data-role="controlgroup" data-mini="true">
                             

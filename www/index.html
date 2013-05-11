@@ -44,7 +44,10 @@
         <div data-role="page" style="padding:0;margin:0;" id="mainpage" data-cache="never">
  
             <script type="text/javascript">
-                
+                var ref;
+                var type=0;
+                var now;
+                var count;
                 $.mobile.buttonMarkup.hoverDelay = 0
                 $("#mainpage").on( "pageshow", function(){
                                     $.mobile.allowCrossDomainPages=true;
@@ -57,11 +60,30 @@
                                     }else{
                                     $("#studentPass").hide();
                                     }
-                                    
-                                    
+                                  if(window.localStorage.getItem("pass")=="true"){
+                                  $("#regularPass").show();
+                                  }else{
+                                  $("#regularPass").hide();
+                                  }
+                                  
                                     
                                     });
                 
+                function showTicket(t){
+                    type=t;
+                    go("#studentPass");
+                    now=$.now();
+                    count=180;
+                    ref=setInterval(function(){
+                                    count--;
+                                    $("#count").html(""+count);
+                                    if($.now()-now>3*60*1000){
+                                    
+                                    go("./index.html");
+                                    }
+                                    
+                                    }, 1000);
+                }
                 
                 </script>
             
@@ -119,13 +141,13 @@
             
             <div class="card card3" stlye="display:none;" id="studentPass" >
                 
-                <div class="cardTitleLeft"><h1>TICKET: </h1></div>
+                <div class="cardTitleLeft"><h1>Student Pass: </h1></div>
                 <div class="cardTitleRight">
-                <a href="#studentPass" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
+                <a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
                 
                 </div>
                 <li>
-                    <b>Carnegie Mellon University ID</b>
+                    <b>Carnegie Mellon University</b>
                     <br/>
                     <center><img src="img/pass.png" width="100%"  style="border-radius:5px;"/></center>
                     
@@ -137,6 +159,26 @@
                 
             </div>
             
+            
+            <div class="card card3" stlye="display:none;" id="regularPass" >
+                
+                <div class="cardTitleLeft"><h1>Pass: </h1></div>
+                <div class="cardTitleRight">
+                    <a href="#studentPass" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
+                    
+                </div>
+                <li>
+                    <b>Weekly Pass</b>
+                    <br/>
+                    <center><img src="img/portAthorityCard.jpg" width="100%"  style="border-radius:5px;"/></center>
+                    
+                    
+                </li>
+                
+                
+                
+                
+            </div>
             
             
             
@@ -174,22 +216,12 @@
             
             
             <script type="text/javascript">
-                var now=$.now();
-                var count=180;
-                var ref=setInterval(function(){
-                            count--;
-                            $("#count").html(""+count);
-                            if($.now()-now>3*60*1000){
-                            
-                            go("./index.html");
-                            }
-                            
-                            }, 1000);
+                
+                
                 $.mobile.buttonMarkup.hoverDelay = 0;
                 
                 $("#studentPass").on( "pageshow", function(){
-                                     now=$.now();
-                                     count=180;
+                                     
                                      var url=window.localStorage.getItem("studentPass.img");
                                      $("#studentPortal").attr("src",url);
                                      

@@ -36,8 +36,10 @@ function register(){
     var ref = window.open("https://www.portauthority.org/paac/CreateAccount/tabid/212/Default.aspx?returnurl=http%3a%2f%2fwww.portauthority.org%2fpaac%2fFaresPasses%2fFares.aspx", '_system', 'location=false');
 }
 function buy(){
-
+    window.localStorage.setItem("pass", "true");
+    
 }
+
 function takepic(){
     alert("Please take a picture of yourself. Picture cannot be changed after taken.");
     navigator.camera.getPicture(onSuccess, onFail, { quality: 50,destinationType: Camera.DestinationType.FILE_URI,correctOrientation:true });
@@ -47,10 +49,10 @@ function onSuccess(imageURI) {
 
     window.localStorage.setItem("studentPass", "true");
     window.localStorage.setItem("studentPass.img", imageURI);
-    $('#studentRegistry').popup("close");
+    $('#studentValidate').popup("close");
 }
 
 function onFail(message) {
-    alert('Failed because: ' + message);
+    $('#studentValidate').popup("close");
 }
 
