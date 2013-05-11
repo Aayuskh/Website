@@ -1,6 +1,6 @@
 var selected="home";
 function gotoMap(obj){
-    
+     go("./map.html");
     $("#"+selected+"Tab img").attr("src","img/"+selected+".png");
     $(obj).find("img").attr("src","img/map_w.png");
     

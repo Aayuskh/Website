@@ -143,7 +143,7 @@
                 
                 <div class="cardTitleLeft"><h1>Student Pass: </h1></div>
                 <div class="cardTitleRight">
-                <a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
+                <a href="#" onclick="showTicket(1)" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
                 
                 </div>
                 <li>
@@ -164,7 +164,7 @@
                 
                 <div class="cardTitleLeft"><h1>Pass: </h1></div>
                 <div class="cardTitleRight">
-                    <a href="#studentPass" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
+                    <a href="#" onclick="showTicket(2)" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
                     
                 </div>
                 <li>
@@ -212,7 +212,7 @@
             
             <div id="count" style="position:absolute;opacity:0.5;top:40%;left:40%; font-size:40px; color:#fff;">180</div>
             <div class="antiFake" id="antiFake">Port Athority<br/>This page will be expired in 3 minutes.</div>
-            <center><img src="img/pass.png" width="320"    id="studentPortal" /></center>
+            <center><img src="img/portAthorityCard.jpg" width="320"    id="studentPortal" /></center>
             
             
             <script type="text/javascript">
@@ -221,10 +221,10 @@
                 $.mobile.buttonMarkup.hoverDelay = 0;
                 
                 $("#studentPass").on( "pageshow", function(){
-                                     
+                                     if(type==1){
                                      var url=window.localStorage.getItem("studentPass.img");
                                      $("#studentPortal").attr("src",url);
-                                     
+                                     }
                                      
                                      
                                      
