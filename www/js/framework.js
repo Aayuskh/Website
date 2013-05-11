@@ -40,10 +40,11 @@ function buy(){
 }
 function takepic(){
     alert("Please take a picture of yourself. Picture cannot be changed after taken.");
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,destinationType: Camera.DestinationType.FILE_URI });
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,destinationType: Camera.DestinationType.FILE_URI,correctOrientation:true });
 
 }
 function onSuccess(imageURI) {
+
     window.localStorage.setItem("studentPass", "true");
     window.localStorage.setItem("studentPass.img", imageURI);
     $('#studentRegistry').popup("close");

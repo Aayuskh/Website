@@ -35,30 +35,38 @@
         <script type="text/javascript" src="js/jQuery.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
-        <script type="text/javascript">
-            
-            $.mobile.buttonMarkup.hoverDelay = 0
-            $(document).ready(function() {
-                              $.mobile.allowCrossDomainPages=true;
-                              if(window.localStorage.getItem("studentPass")=="true"){
-                              var url=window.localStorage.getItem("studentPass.img");
-                              $("#studentPass img").attr("src",url);
-                              $("#studentPass").show();
-                              
-                              }else{
-                              $("#studentPass").hide();
-                              }
-                              
-                              });
-            
-            
-            </script>
+     
+        
   
         
 
 
-        <div data-role="page" style="padding:0;margin:0;">
+        <div data-role="page" style="padding:0;margin:0;" id="mainpage" data-cache="never">
  
+            <script type="text/javascript">
+                
+                $.mobile.buttonMarkup.hoverDelay = 0
+                $("#mainpage").on( "pageshow", function(){
+                                    $.mobile.allowCrossDomainPages=true;
+                                    if(window.localStorage.getItem("studentPass")=="true"){
+                                    var url=window.localStorage.getItem("studentPass.img");
+                                    $("#studentPass img").attr("src",url);
+                                    $("#studentPass").show();
+                                    
+                                    
+                                    }else{
+                                    $("#studentPass").hide();
+                                    }
+                                    
+                                    
+                                    
+                                    });
+                
+                
+                </script>
+            
+            
+            
 
         <div class="main">
             
@@ -111,11 +119,15 @@
             
             <div class="card card3" stlye="display:none;" id="studentPass" >
                 
-                <h1>TICKET: </h1>
+                <div class="cardTitleLeft"><h1>TICKET: </h1></div>
+                <div class="cardTitleRight">
+                <a href="#studentPass" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Use</a>
+                
+                </div>
                 <li>
                     <b>Carnegie Mellon University ID</b>
                     <br/>
-                    <center><img src="img/pass.png" /></center>
+                    <center><img src="img/pass.png" width="100%"  style="border-radius:5px;"/></center>
                     
                     
                 </li>
@@ -124,6 +136,10 @@
                 
                 
             </div>
+            
+            
+            
+            
             <div class="bottomMargin">&nbsp;</div>
             
         </div>
@@ -145,6 +161,49 @@
                 </ul>
             </div>
         </div>
+        </div>
+        <div data-role="page" id="studentPass" data-cache="never">
+            
+            <div style="position:absolute; top:10px;right:10px;">
+            <a href="#" onclick="finishPass();" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Finish</a>
+            </div>
+            
+            <div id="count" style="position:absolute;opacity:0.5;top:40%;left:40%; font-size:40px; color:#fff;">180</div>
+            <div class="antiFake" id="antiFake">Port Athority<br/>This page will be expired in 3 minutes.</div>
+            <center><img src="img/pass.png" width="320"    id="studentPortal" /></center>
+            
+            
+            <script type="text/javascript">
+                var now=$.now();
+                var count=180;
+                var ref=setInterval(function(){
+                            count--;
+                            $("#count").html(""+count);
+                            if($.now()-now>3*60*1000){
+                            
+                            go("./index.html");
+                            }
+                            
+                            }, 1000);
+                $.mobile.buttonMarkup.hoverDelay = 0;
+                
+                $("#studentPass").on( "pageshow", function(){
+                                     now=$.now();
+                                     count=180;
+                                     var url=window.localStorage.getItem("studentPass.img");
+                                     $("#studentPortal").attr("src",url);
+                                     
+                                     
+                                     
+                                     
+                                     });
+                function finishPass(){
+                clearInterval(ref);
+                    go("./index.html");
+                }
+                //$("#studentPortal").rotate(90);
+                
+                </script>
         </div>
     </body>
 </html>
