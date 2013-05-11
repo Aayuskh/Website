@@ -34,12 +34,54 @@
   
             $.mobile.buttonMarkup.hoverDelay = 0
             $(document).ready(function() {
-                              $.mobile.allowCrossDomainPages=true;
-                              
-                              });
+                $.mobile.allowCrossDomainPages=true;
+   
+            });
+
+            var zone = $("#zone").val();
+            var pass = $("#pass").val();
+
+            function display(){
+                    alert(display);
+                if( zone == 1 && pass == 1){
+                    alert("11");
+                    document.getElementById("zone1").selected=true;
+                    document.getElementById("weekly").selected=true;
+                    document.getElementById('price2').innerHTML = "$25.00";
+                }
+                if( zone == 1 && pass == 2){
+                    alert("12");
+                    document.getElementById("zone1").selected=true;
+                    document.getElementById("monthly").selected=true;
+                    document.getElementById('price2').innerHTML = "$97.50";
+                }
+                if( zone == 1 && pass == 3){
+                    alert("13");
+                    document.getElementById("zone1").selected=true;
+                    document.getElementById("anual").selected=true;
+                    document.getElementById('price2').innerHTML = "$1072.50";
+                }
+                if( zone == 2 && pass == 1){
+                    alert("21");
+                    document.getElementById("zone2").selected=true;
+                    document.getElementById("weekly").selected=true;
+                    document.getElementById('price2').innerHTML = "$37.50";
+                }
+                if( zone == 2 && pass == 2){
+                    alert("22");
+                    document.getElementById("zone2").selected=true;
+                    document.getElementById("monthly").selected=true;
+                    document.getElementById('price2').innerHTML = "$146.25";
+                }
+                if( zone == 2 && pass == 3){
+                    alert("23");
+                    document.getElementById("zone2").selected=true;
+                    document.getElementById("anual").selected=true;
+                    document.getElementById('price2').innerHTML = "$1608.750";
+                }
+            }
             
-            
-            </script>
+    </script>
     </head>
     <body>
   
@@ -83,10 +125,10 @@
                     <div class="cardTitleLeft"><h1>Ticket</h1></div><div class="cardTitleRight"><a href="#loginPopup" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="popup" data-transition="slideup">Purchase</a></div>
                     <div style="clear:both;">
                         <fieldset data-role="controlgroup" data-mini="true">
-                            <legend>Ticket Price: $2.50</legend>
+                            <legend>Ticket Price: <span id="price1">$2.50</span></legend>
                             
                             <select name="select-native-14" id="select-native-14">
-                                <option value="#" selected>1 Zone</option>
+                                <option value="#" selected="selected">1 Zone</option>
                                 <option value="#">2 Zones</option>
                                 <option value="#">Incline</option>
                             </select>
@@ -109,17 +151,17 @@
                     <div class="cardTitleLeft"><h1>Pass</h1></div><div class="cardTitleRight"><a href="#loginPopup" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="popup" data-transition="slideup">Purchase</a></div>
                     <div style="clear:both;">
                         <fieldset data-role="controlgroup" data-mini="true">
-                            <legend>Pass Price: $25.00</legend>
+                            <legend>Pass Price: <span id="price2">$25.00</span></legend>
                             
-                            <select name="select-native-14" id="select-native-14">
-                                <option value="#" selected>1 Zone</option>
-                                <option value="#">2 Zones</option>
+                            <select name="select-native-14" id="zone" onchange="display()">
+                                <option value="1" id="zone1" selected="selected">1 Zone</option>
+                                <option value="2" id="zone2">2 Zones</option>
                             </select>
                             
-                            <select name="select-native-15" id="select-native-15">
-                                <option value="#">Weekly</option>
-                                <option value="#">Monthly</option>
-                                <option value="#">Anual</option>
+                            <select name="select-native-15" id="pass" onchange="display()">
+                                <option value="1" id="weekly" selected="selected">Weekly</option>
+                                <option value="2" id="monthly">Monthly</option>
+                                <option value="3" id="anual">Anual</option>
                             </select>
                             
                         </fieldset>
@@ -129,7 +171,7 @@
                     <div class="cardTitleLeft"><h1>Ten-Trip Ticket Book</h1></div><div class="cardTitleRight"><a href="#loginPopup" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="popup" data-transition="slideup">Purchase</a></div>
                     <div style="clear:both;">
                         <fieldset data-role="controlgroup" data-mini="true">
-                            <legend>Book Price: $25.00</legend>
+                            <legend>Book Price: <span id="price3">$25.00</span></legend>
                             
                             <select name="select-native-14" id="select-native-14">
                                 <option value="#" selected>1 Zone</option>
@@ -181,15 +223,8 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-            
-            
-            
-            
+            </div>   
         </div>
-        
-        
-        
         
     </body>
 </html>
