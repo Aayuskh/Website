@@ -38,43 +38,35 @@
    
             });
 
-            var zone = $("#zone").val();
-            var pass = $("#pass").val();
-
             function display(){
-                    alert(display);
+                var zone = $("#zone").val();
+                var pass = $("#pass").val();
                 if( zone == 1 && pass == 1){
-                    alert("11");
                     document.getElementById("zone1").selected=true;
                     document.getElementById("weekly").selected=true;
                     document.getElementById('price2').innerHTML = "$25.00";
                 }
                 if( zone == 1 && pass == 2){
-                    alert("12");
                     document.getElementById("zone1").selected=true;
                     document.getElementById("monthly").selected=true;
                     document.getElementById('price2').innerHTML = "$97.50";
                 }
                 if( zone == 1 && pass == 3){
-                    alert("13");
                     document.getElementById("zone1").selected=true;
                     document.getElementById("anual").selected=true;
                     document.getElementById('price2').innerHTML = "$1072.50";
                 }
                 if( zone == 2 && pass == 1){
-                    alert("21");
                     document.getElementById("zone2").selected=true;
                     document.getElementById("weekly").selected=true;
                     document.getElementById('price2').innerHTML = "$37.50";
                 }
                 if( zone == 2 && pass == 2){
-                    alert("22");
                     document.getElementById("zone2").selected=true;
                     document.getElementById("monthly").selected=true;
                     document.getElementById('price2').innerHTML = "$146.25";
                 }
                 if( zone == 2 && pass == 3){
-                    alert("23");
                     document.getElementById("zone2").selected=true;
                     document.getElementById("anual").selected=true;
                     document.getElementById('price2').innerHTML = "$1608.750";
