@@ -1,4 +1,5 @@
-window.onload = getMyLocation;
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
 var map;
 
 
@@ -35,6 +36,7 @@ function displayError(error){
 }
 
 function initialize(){
+	directionsDisplay = new google.maps.DirectionsRenderer();
 	var googleLatAndLong = new google.maps.LatLng(40.4441236,-79.94534760);
 	var mapProp = {
 		center: googleLatAndLong,
@@ -43,9 +45,10 @@ function initialize(){
 		mapTypeId:google.maps.MapTypeId.ROADMAP
 	};
 
-	var map = new google.maps.Map(document.getElementById("googleMap")
+	map = new google.maps.Map(document.getElementById("googleMap")
 	  ,mapProp);
-	addMarker(map, googleLatAndLong);
+	directionsDisplay.setMap(map);
+	//addMarker(map, googleLatAndLong);
 }
 
 function addMarker (map, latlong, title, content){
@@ -54,4 +57,25 @@ function addMarker (map, latlong, title, content){
       map:map
   };
   var marker = new google.maps.Marker(markerOptions);
+}
+
+function clear(){
+}
+
+function drawRoute(){
+	var start = document.getElementById('origin').value;
+	start = start.substring(6, origin.length);
+	var end = document.getElementById('destination').value;
+	end = end.substring(4, origin.length);
+	
+	var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.DirectionsTravelMode.TRANSIT
+	};
+	directionsService.route(request, function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(response);
+		}
+	});
 }
