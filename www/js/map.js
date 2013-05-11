@@ -1,4 +1,9 @@
 window.onload = getMyLocation;
+<<<<<<< HEAD
+=======
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+>>>>>>> Map Path function
 var map;
 
 
@@ -35,6 +40,10 @@ function displayError(error){
 }
 
 function initialize(){
+<<<<<<< HEAD
+=======
+	directionsDisplay = new google.maps.DirectionsRenderer();
+>>>>>>> Map Path function
 	var googleLatAndLong = new google.maps.LatLng(40.4441236,-79.94534760);
 	var mapProp = {
 		center: googleLatAndLong,
@@ -45,6 +54,7 @@ function initialize(){
 
 	var map = new google.maps.Map(document.getElementById("googleMap")
 	  ,mapProp);
+<<<<<<< HEAD
 	addMarker(map, googleLatAndLong);
 }
 
@@ -54,4 +64,37 @@ function addMarker (map, latlong, title, content){
       map:map
   };
   var marker = new google.maps.Marker(markerOptions);
+=======
+	directionsDisplay.setMap(map);
+	//addMarker(map, googleLatAndLong);
+}
+
+function addMarker (map, latlong, title, content){
+  var markerOptions = {
+      position:latlong,
+      map:map
+  };
+  var marker = new google.maps.Marker(markerOptions);
+}
+
+function clear(){
+}
+
+function drawRoute(){
+	var start = document.getElementById('origin').value;
+	start = start.substring(6, origin.length);
+	var end = document.getElementById('destination').value;
+	end = end.substring(4, origin.length);
+	
+	var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.DirectionsTravelMode.DRIVING
+	};
+	directionsService.route(request, function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(response);
+		}
+	});
+>>>>>>> Map Path function
 }

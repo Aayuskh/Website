@@ -41,11 +41,11 @@
     <div class="main">
         <div class="trip">
             <div class="trip-left">
-            <input type="text" name="origin" value="Start: " data-mini="true">
-            <input type="text" name="destination" value="End: " data-mini="true">
+            <input type="text" id="origin" name="origin" value="Start: " data-mini="true">
+            <input type="text" id="destination" name="destination" value="End: " data-mini="true">
             </div>
-            <div class="trip-right"> 
-            <a href="#" data-role="button" data-icon="check" data-iconpos="notext" data-theme="c" data-inline="true">Check</a>
+            <div class="trip-right">
+            <a href="#" data-role="button" data-icon="check" data-iconpos="notext" data-theme="c" data-inline="true" onclick="drawRoute()">Check</a>
             </div>  
         </div>
         <div id="googleMap"></div>
