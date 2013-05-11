@@ -28,10 +28,7 @@
 
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.css" />
-    </head>
-    <body>
-
-  
+        <script type="text/javascript" src="cordova-2.7.0.js"></script>
         <script type="text/javascript" src="js/jQuery.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
@@ -40,18 +37,23 @@
             $.mobile.defaultDialogTransition = 'none'
             $.mobile.buttonMarkup.hoverDelay = 0
             $(document).ready(function() {
-              $.mobile.allowCrossDomainPages=true;
-                    if(window.localStorage.getItem("studentPass")=="true"){
-                        var url=window.localStorage.getItem("studentPass.img");
+                              $.mobile.allowCrossDomainPages=true;
+                              if(window.localStorage.getItem("studentPass")=="true"){
+                              var url=window.localStorage.getItem("studentPass.img");
                               $("#studentPass img").attr("src",url);
                               $("#studentPass").css("display","block");
                               
-                    }
-                           
-            });
-             
+                              }
+                              
+                              });
             
-        </script>
+            
+            </script>
+    </head>
+    <body>
+
+  
+        
 
 
         <div data-role="page" style="padding:0;margin:0;">
