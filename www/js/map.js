@@ -19,6 +19,21 @@ function  displayLocation(position) {
 	}
 }
 
+
+function onSuccess(position) {
+ 
+    var myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    alert(1);
+    map  = new google.maps.Map(document.getElementById('googleMap'), {
+                               mapTypeId: google.maps.MapTypeId.ROADMAP,
+                               center: myLocation,
+                               zoom: 15,
+                               disableDefaultUI: true
+                               });
+    directionsDisplay.setMap(map);
+  
+}
 function displayError(error){
 	alert("not work");
 	var errorTypes = {
@@ -36,19 +51,18 @@ function displayError(error){
 }
 
 function initialize(){
-	directionsDisplay = new google.maps.DirectionsRenderer();
-	var googleLatAndLong = new google.maps.LatLng(40.4441236,-79.94534760);
-	var mapProp = {
-		center: googleLatAndLong,
-		zoom:12,
-		disableDefaultUI: true,
-		mapTypeId:google.maps.MapTypeId.ROADMAP
-	};
-
-	map = new google.maps.Map(document.getElementById("googleMap")
-	  ,mapProp);
-	directionsDisplay.setMap(map);
-	//addMarker(map, googleLatAndLong);
+    document.addEventListener("deviceready", onDeviceReady, false);
+ 
+    function onDeviceReady() {
+        // get device's geographical location and return it as a Position object (which is then passed to onSuccess)
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+    
+    
+    
+    
+    
+	
 }
 
 function addMarker (map, latlong, title, content){
