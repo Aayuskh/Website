@@ -64,9 +64,9 @@ function clear(){
 
 function drawRoute(){
 	var start = document.getElementById('origin').value;
-	start = start.substring(6, origin.length);
+	
 	var end = document.getElementById('destination').value;
-	end = end.substring(4, origin.length);
+	
 	
 	var request = {
       origin:start,
