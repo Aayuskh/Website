@@ -38,7 +38,7 @@ function register(){
 }
 function buy(){
     window.localStorage.setItem("pass", "true");
-    
+    $('#loginPopup').popup("close");
 }
 
 function takepic(){

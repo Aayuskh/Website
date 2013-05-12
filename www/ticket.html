@@ -34,46 +34,11 @@
   
             $.mobile.buttonMarkup.hoverDelay = 0
             $(document).ready(function() {
-                $.mobile.allowCrossDomainPages=true;
+            $.mobile.allowCrossDomainPages=true;
+             
    
             });
 
-            function display(){
-
-                var zone = $("#zone").val();
-                var pass = $("#pass").val();
-
-                if( zone == 1 && pass == 1){
-                    document.getElementById("zone1").selected=true;
-                    document.getElementById("weekly").selected=true;
-                    document.getElementById('price2').innerHTML = "$25.00";
-                }
-                if( zone == 1 && pass == 2){
-                    document.getElementById("zone1").selected=true;
-                    document.getElementById("monthly").selected=true;
-                    document.getElementById('price2').innerHTML = "$97.50";
-                }
-                if( zone == 1 && pass == 3){
-                    document.getElementById("zone1").selected=true;
-                    document.getElementById("anual").selected=true;
-                    document.getElementById('price2').innerHTML = "$1072.50";
-                }
-                if( zone == 2 && pass == 1){
-                    document.getElementById("zone2").selected=true;
-                    document.getElementById("weekly").selected=true;
-                    document.getElementById('price2').innerHTML = "$37.50";
-                }
-                if( zone == 2 && pass == 2){
-                    document.getElementById("zone2").selected=true;
-                    document.getElementById("monthly").selected=true;
-                    document.getElementById('price2').innerHTML = "$146.25";
-                }
-                if( zone == 2 && pass == 3){
-                    document.getElementById("zone2").selected=true;
-                    document.getElementById("anual").selected=true;
-                    document.getElementById('price2').innerHTML = "$1608.750";
-                }
-            }
             
     </script>
     </head>
@@ -147,12 +112,12 @@
                         <fieldset data-role="controlgroup" data-mini="true">
                             <legend>Pass Price: <span id="price2">$25.00</span></legend>
                             
-                            <select name="select-native-14" id="zone" onchange="display()">
+                            <select name="select-native-14" id="zone" >
                                 <option value="1" id="zone1" selected="selected">1 Zone</option>
                                 <option value="2" id="zone2">2 Zones</option>
                             </select>
                             
-                            <select name="select-native-15" id="pass" onchange="display()">
+                            <select name="select-native-15" id="pass" >
                                 <option value="1" id="weekly" selected="selected">Weekly</option>
                                 <option value="2" id="monthly">Monthly</option>
                                 <option value="3" id="anual">Anual</option>
@@ -197,6 +162,45 @@
                         </fieldset>
                     </div>
                 </div>
+                <script>
+                
+                    $(document).on('change','select',function(){
+                                   var zone = $("#zone").val();
+                                   var pass = $("#pass").val();
+                                   
+                                   if( zone == 1 && pass == 1){
+                                   document.getElementById("zone1").selected=true;
+                                   document.getElementById("weekly").selected=true;
+                                   document.getElementById('price2').innerHTML = "$25.00";
+                                   }
+                                   if( zone == 1 && pass == 2){
+                                   document.getElementById("zone1").selected=true;
+                                   document.getElementById("monthly").selected=true;
+                                   document.getElementById('price2').innerHTML = "$97.50";
+                                   }
+                                   if( zone == 1 && pass == 3){
+                                   document.getElementById("zone1").selected=true;
+                                   document.getElementById("anual").selected=true;
+                                   document.getElementById('price2').innerHTML = "$1072.50";
+                                   }
+                                   if( zone == 2 && pass == 1){
+                                   document.getElementById("zone2").selected=true;
+                                   document.getElementById("weekly").selected=true;
+                                   document.getElementById('price2').innerHTML = "$37.50";
+                                   }
+                                   if( zone == 2 && pass == 2){
+                                   document.getElementById("zone2").selected=true;
+                                   document.getElementById("monthly").selected=true;
+                                   document.getElementById('price2').innerHTML = "$146.25";
+                                   }
+                                   if( zone == 2 && pass == 3){
+                                   document.getElementById("zone2").selected=true;
+                                   document.getElementById("anual").selected=true;
+                                   document.getElementById('price2').innerHTML = "$1608.750";
+                                   }
+
+                                   });
+                    </script>
                 <div class="bottomMargin">&nbsp;</div>
                 
             </div>
