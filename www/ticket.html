@@ -42,7 +42,7 @@
             var pass = $("#pass").val();
 
             function display(){
-                    alert(display);
+                alert("sdfas");
                 if( zone == 1 && pass == 1){
                     alert("11");
                     document.getElementById("zone1").selected=true;
@@ -209,10 +209,10 @@
             <div class="footBar">
                 <div data-role="navbar" data-grid="c" id="tab1">
                     <ul>
-                        <li onclick="gotoHome(this)"><a href="#" class="ui-btn-active" id="homeTab" >
+                        <li onclick="gotoHome(this)"><a href="#" id="homeTab" >
                             <div><img src="img/home.png" height="20px" /></div><div>Home</div></a>
                         </li>
-                        <li onclick="gotoTicket(this)"><a href="#" id="ticketTab" ><div>
+                        <li onclick="gotoTicket(this)"><a href="#" id="ticketTab" class="ui-btn-active"><div>
                             <img src="img/ticket_w.png" height="20px" /></div><div>Ticket</div></a>
                         </li>
                         <li onclick="gotoMap(this)"><a href="#" id="mapTab"><div>

@@ -22,6 +22,7 @@ go("./ticket.html");
     
 }
 function gotoSetting(obj){
+    go("./setting.html");
     $("#"+selected+"Tab img").attr("src","img/"+selected+".png");
     $(obj).find("img").attr("src","img/setting_w.png");
     

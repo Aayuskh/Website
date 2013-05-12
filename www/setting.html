@@ -46,106 +46,65 @@
             </script>
         <div data-role="page" style="padding:0;margin:0;">
             <div class="main" >
-                <link rel="stylesheet" type="text/css" href="css/ticket.css" />
-                <div class="card">
-                    <div class="cardTitleLeft"><h1>Ticket</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Purchase</a></div>
-                    <div style="clear:both;">
-                        <fieldset data-role="controlgroup" data-mini="true">
-                            <legend>Ticket Price: $2.50</legend>
-                            
-                            <select name="select-native-14" id="select-native-14">
-                                <option value="#" selected>1 Zone</option>
-                                <option value="#">2 Zones</option>
-                                <option value="#">Incline</option>
-                            </select>
-                            
-                            <select name="select-native-15" id="select-native-15">
-                                <option value="#">Full fare</option>
-                                <option value="#">Half fare</option>
-                            </select>
-                            
-                            <select name="select-native-16" id="select-native-16">
-                                <option value="#">N/A</option>
-                                <option value="#">Transfer</option>
-                                <option value="#">Light Rail Surcharge</option>
-                            </select>
-                        </fieldset>
-                    </div>
+                <div data-theme="c" data-role="header">
+                    <span class="ui-title">
+                    </span>
+                    <a data-role="button" href="#page1" data-icon="plus" data-iconpos="left"
+                        class="ui-btn-right">
+                        Add
+                    </a>
                 </div>
-                
-                <div class="card">
-                    <div class="cardTitleLeft"><h1>Pass</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Purchase</a></div>
-                    <div style="clear:both;">
-                        <fieldset data-role="controlgroup" data-mini="true">
-                            <legend>Pass Price: $25.00</legend>
-                            
-                            <select name="select-native-14" id="select-native-14">
-                                <option value="#" selected>1 Zone</option>
-                                <option value="#">2 Zones</option>
-                            </select>
-                            
-                            <select name="select-native-15" id="select-native-15">
-                                <option value="#">Weekly</option>
-                                <option value="#">Monthly</option>
-                                <option value="#">Anual</option>
-                            </select>
-                            
-                        </fieldset>
-                    </div>
+                <div data-role="content">
+                    <ul data-role="listview" data-divider-theme="b" data-inset="false">
+                        <li data-role="list-divider" role="heading">
+                            My Places
+                        </li>
+                        <li data-theme="c">
+                            <a href="#page1" data-transition="slide">
+                                South Craig
+                            </a>
+                        </li>
+                        <li data-theme="c">
+                            <a href="#page1" data-transition="slide">
+                                Waterfront
+                            </a>
+                        </li>
+                        <li data-role="list-divider" role="heading">
+                            Famous Places
+                        </li>
+                        <li data-theme="c">
+                            <a href="#page1" data-transition="slide">
+                                Carnegie Mellon University
+                            </a>
+                        </li>
+                        <li data-theme="c">
+                            <a href="#page1" data-transition="slide">
+                                University of Pittsburgh
+                            </a>
+                        </li>
+                        <li data-theme="c">
+                            <a href="#page1" data-transition="slide">
+                                Pittsburgh International Airport
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <div class="cardTitleLeft"><h1>Ten-Trip Ticket Book</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Purchase</a></div>
-                    <div style="clear:both;">
-                        <fieldset data-role="controlgroup" data-mini="true">
-                            <legend>Book Price: $25.00</legend>
-                            
-                            <select name="select-native-14" id="select-native-14">
-                                <option value="#" selected>1 Zone</option>
-                                <option value="#">2 Zones</option>
-                            </select>
-                            
-                            <select name="select-native-15" id="select-native-15">
-                                <option value="#">Full fare</option>
-                                <option value="#">Half fare</option>
-                            </select>
-                            
-                        </fieldset>
-                    </div>
-                    
-                </div>
-                
-                <div class="card">
-                    <div class="cardTitleLeft"><h1>Student card</h1></div><div class="cardTitleRight"><a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Register</a></div>
-                    <div style="clear:both;">
-                        <fieldset data-role="controlgroup" data-mini="true">
-                            
-                            <select name="select-native-14" id="select-native-14">
-                                <option value="#" selected>Carnegie Mellon University</option>
-                                <option value="#">University of Pittsburgh</option>
-                            </select>
-                            
-                            
-                            
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="bottomMargin">&nbsp;</div>
                 
             </div>
             <div class="footBar">
                 <div data-role="navbar" data-grid="c" id="tab1">
                     <ul>
-                        <li onclick="gotoHome(this)"><a href="#" class="ui-btn-active" id="homeTab" >
+                        <li onclick="gotoHome(this)"><a href="#"  id="homeTab" >
                             <div><img src="img/home.png" height="20px" /></div><div>Home</div></a>
                         </li>
                         <li onclick="gotoTicket(this)"><a href="#" id="ticketTab" ><div>
-                            <img src="img/ticket_w.png" height="20px" /></div><div>Ticket</div></a>
+                            <img src="img/ticket.png" height="20px" /></div><div>Ticket</div></a>
                         </li>
                         <li onclick="gotoMap(this)"><a href="#" id="mapTab"><div>
                             <img src="img/map.png" height="20px" /></div><div>Map</div></a>
                         </li>
-                        <li onclick="gotoSetting(this)"><a href="#" id="settingTab">
-                            <div><img src="img/setting.png" height="20px" /></div><div>Setting</div></a>
+                        <li onclick="gotoSetting(this)"><a href="#" id="settingTab" class="ui-btn-active">
+                            <div><img src="img/setting_w.png" height="20px" /></div><div>Places</div></a>
                         </li>
                     </ul>
                 </div>
