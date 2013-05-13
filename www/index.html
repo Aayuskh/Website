@@ -90,6 +90,16 @@
                                     }
                                     
                                     }, 1000);
+                    var d = new Date();
+                    
+                    var month = d.getMonth()+1;
+                    var day = d.getDate();
+                    
+                    var outputDate = d.getFullYear() + '/' +
+                    (month<10 ? '0' : '') + month + '/' +
+                    (day<10 ? '0' : '') + day;
+                    $("#nowDate").html(outputDate);
+                    
                 }
                 
                 </script>
@@ -219,7 +229,8 @@
             <a href="#" onclick="finishPass();" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-rel="page" data-transition="slideup">Finish</a>
             </div>
             
-            <div id="count" style="position:absolute;opacity:0.5;top:40%;left:40%; font-size:40px; color:#fff;">180</div>
+            <div id="count" style="position:absolute;opacity:0.8;top:40%;left:40%; font-size:40px; color:#fff;">180</div>
+            <div id="nowDate" style="position:absolute;opacity:0.8;top:60%;left:20%; font-size:40px; color:#fff;"></div>
             <div class="antiFake" id="antiFake">Port Athority<br/>This page will be expired in 3 minutes.</div>
             <center><img src="img/portAthorityCard_l.jpg" width="320"    id="studentPortal" /></center>
             
