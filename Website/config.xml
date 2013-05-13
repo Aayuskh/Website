@@ -61,4 +61,5 @@
     </plugins>
 
     <access origin="*" />
+    
 </widget>

@@ -35,6 +35,24 @@ function displayError(error){
 	document.getElementById("error").innerHTML = errorMessage;
 }
 
+function initializeMap(){
+    alert(2);
+	directionsDisplay = new google.maps.DirectionsRenderer();
+    alert(1);
+	var googleLatAndLong = new google.maps.LatLng(40.4441236,-79.94534760);
+	var mapProp = {
+		center: googleLatAndLong,
+		zoom:12,
+		disableDefaultUI: true,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+	};
+
+	map = new google.maps.Map(document.getElementById("googleMap")
+	  ,mapProp);
+	directionsDisplay.setMap(map);
+    alert(1);
+	//addMarker(map, googleLatAndLong);
+}
 
 function addMarker (map, latlong, title, content){
   var markerOptions = {
