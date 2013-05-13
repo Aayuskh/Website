@@ -145,7 +145,9 @@
                         
                         </div>
             
-            
+            <div class="card card3">
+            <img src="img/ad.png" width="100%">
+            </div>
             <div class="card card3" stlye="display:none;" id="studentPass" >
                 
                 <div class="cardTitleLeft"><h1>Student Pass: </h1></div>
@@ -232,11 +234,27 @@
                                 
                 function finishPass(){
                 clearInterval(ref);
-                    go("./index.html");
+                    $("#busPopup").popup("open");
                 }
                 //$("#studentPortal").rotate(90);
                 
                 </script>
+        </div>
+        
+        <div data-role="popup" id="busPopup" data-position-to="window">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <div class="ui-content">
+                <p>You are on:</p>
+                
+                        <p>
+                        
+                        <a href="#mainpage"  data-role="button" data-mini="false" data-inline="true" >61A</a>
+                        <a href="#mainpage" data-role="button" data-mini="false" data-inline="true"  >61B</a><br/>
+                        <a href="#mainpage" data-role="button" data-mini="false" data-inline="true"  >61C</a>
+                        <a href="#mainpage" data-role="button" data-mini="false" data-inline="true"  >61D</a><br/>
+                        <a href="#mainpage" data-role="button" data-mini="false" data-inline="true"  >N/A</a>
+                        </p>
+                        </div>
         </div>
     </body>
 </html>
