@@ -35,10 +35,8 @@ function displayError(error){
 	document.getElementById("error").innerHTML = errorMessage;
 }
 
-function initializeMap(){
-    alert(2);
+function initialize(){
 	directionsDisplay = new google.maps.DirectionsRenderer();
-    alert(1);
 	var googleLatAndLong = new google.maps.LatLng(40.4441236,-79.94534760);
 	var mapProp = {
 		center: googleLatAndLong,
@@ -50,7 +48,6 @@ function initializeMap(){
 	map = new google.maps.Map(document.getElementById("googleMap")
 	  ,mapProp);
 	directionsDisplay.setMap(map);
-    alert(1);
 	//addMarker(map, googleLatAndLong);
 }
 
@@ -67,9 +64,9 @@ function clear(){
 
 function drawRoute(){
 	var start = document.getElementById('origin').value;
-	
+	start = start.substring(6, origin.length);
 	var end = document.getElementById('destination').value;
-	
+	end = end.substring(4, origin.length);
 	
 	var request = {
       origin:start,
