@@ -74,6 +74,13 @@
                     go("#studentPassPage");
                     now=$.now();
                     count=180;
+                    if(type==1){
+                        var url=window.localStorage.getItem("studentPass.img");
+                        $("#studentPortal").attr("src",url);
+                    }else{
+                    $("#studentPortal").attr("src","img/portAthorityCard_l.jpg");
+                    
+                    }
                     ref=setInterval(function(){
                                     count--;
                                     $("#count").html(""+count);
@@ -212,7 +219,7 @@
             
             <div id="count" style="position:absolute;opacity:0.5;top:40%;left:40%; font-size:40px; color:#fff;">180</div>
             <div class="antiFake" id="antiFake">Port Athority<br/>This page will be expired in 3 minutes.</div>
-            <center><img src="img/portAthorityCard.jpg" width="320"    id="studentPortal" /></center>
+            <center><img src="img/portAthorityCard_l.jpg" width="320"    id="studentPortal" /></center>
             
             
             <script type="text/javascript">
@@ -220,15 +227,9 @@
                 
                 $.mobile.buttonMarkup.hoverDelay = 0;
                 
-                $("#studentPass").on( "pageshow", function(){
-                                     if(type==1){
-                                     var url=window.localStorage.getItem("studentPass.img");
-                                     $("#studentPortal").attr("src",url);
-                                     }
+               
                                      
-                                     
-                                     
-                                     });
+                                
                 function finishPass(){
                 clearInterval(ref);
                     go("./index.html");
